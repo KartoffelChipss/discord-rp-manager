@@ -1,0 +1,33 @@
+{
+    "name": "rp-manager-discord",
+    "version": "1.0.0",
+    "main": "./src/app.js",
+    "scripts": {
+        "start": "electron .",
+        "dev": "NODE_ENV=development electron .",
+        "startprod": "electron .",
+        "dist": "electron-builder",
+        "dist:win": "electron-builder --win",
+        "dist:linux": "electron-builder --linux",
+        "dist:linux:deb": "electron-builder --linux deb",
+        "dist:linux:snap": "electron-builder --linux snap",
+        "dist:mac": "electron-builder --mac"
+    },
+    "keywords": [],
+    "author": {
+        "name": "Jan Straßburger",
+        "email": "contact@strassburger.org",
+        "url": "https://strassburger.org/"
+    },
+    "license": "GNU General Public License v3.0",
+    "description": "",
+    "devDependencies": {
+        "electron": "^30.0.8",
+        "electron-builder": "^24.9.1"
+    },
+    "dependencies": {
+        "discord-rpc": "^4.0.1",
+        "electron-log": "^5.0.1",
+        "electron-store": "^8.1.0"
+    }
+}

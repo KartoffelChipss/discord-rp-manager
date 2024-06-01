@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discord RP Manager</title>
+
+    <script type="module" src="/main.js" defer></script>
+
+    <link rel="stylesheet" href="./css/main.css" />
+</head>
+
+<body>
+    <div class="settings">
+        <div class="top">
+            <div class="setting">
+                <label>Application ID</label>
+                <input type="text" placeholder="Insert your Application ID" id="appid">
+            </div>
+    
+            <!-- <button type="button" class="blue">
+                Connect
+            </button> -->
+    
+            <button type="button" class="icon blue" id="refreshBtn" onclick="refreshLogin(document.getElementById('appid').value)">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#fefefe"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 21C16.9706 21 21 16.9706 21 12C21 9.69494 20.1334 7.59227 18.7083 6L16 3M12 3C7.02944 3 3 7.02944 3 12C3 14.3051 3.86656 16.4077 5.29168 18L8 21M21 3H16M16 3V8M3 21H8M8 21V16" stroke="#fefefe" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                Refresh
+            </button>
+        </div>
+
+        <div class="border"></div>
+
+        <div class="bottom">
+            <div class="settingsrow">
+                <div class="setting">
+                    <label>Line 1</label>
+                    <input type="text" placeholder="The first line of your status" id="line1">
+                </div>
+
+                <div class="setting">
+                    <label>Line 2</label>
+                    <input type="text" placeholder="The second line of your status" id="line2">
+                </div>
+            </div>
+
+            <div class="settingsrow">
+                <div class="settingsBox">
+                    <h3>Large Image</h3>
+
+                    <div class="setting">
+                        <label>Image URL</label>
+                        <input type="url" placeholder="The big image url" id="largeImgUrl">
+                    </div>
+
+                    <div class="setting">
+                        <label>Image text</label>
+                        <input type="text" placeholder="The big image text" id="largeImgText">
+                    </div>
+                </div>
+
+                <div class="settingsBox">
+                    <h3>Small Image</h3>
+
+                    <div class="setting">
+                        <label>Image URL</label>
+                        <input type="url" placeholder="The big image url" id="smallImgUrl">
+                    </div>
+
+                    <div class="setting">
+                        <label>Image text</label>
+                        <input type="text" placeholder="The big image text" id="smallImgText">
+                    </div>
+                </div>
+            </div>
+
+            <div class="settingsrow">
+                <div class="settingsBox">
+                    <h3>First Button</h3>
+
+                    <div class="setting">
+                        <label>Button text</label>
+                        <input type="text" placeholder="Text displayed on the button" id="buttonText1">
+                    </div>
+
+                    <div class="setting">
+                        <label>Button URL</label>
+                        <input type="url" placeholder="The url that the button leads to" id="buttonURL1">
+                    </div>
+                </div>
+
+                <div class="settingsBox">
+                    <h3>Second Button</h3>
+
+                    <div class="setting">
+                        <label>Button text</label>
+                        <input type="text" placeholder="Text displayed on the button" id="buttonText2">
+                    </div>
+
+                    <div class="setting">
+                        <label>Button URL</label>
+                        <input type="url" placeholder="The url that the button leads to" id="buttonURL2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="preview">
+        <div class="outer">
+            <div class="top">
+                <img src="https://strassburger.org/img/pp.png" alt="User avatar" class="avatar">
+                <div class="badges">
+                    <img src="./assets/badge_dev.svg" alt="dev badge" class="badge">
+                    <img src="./assets/badge_hashtag.png" alt="dev badge" class="badge">
+                </div>
+            </div>
+
+            <div class="inner">
+                <span class="uname">Kartoffelchipss</span>
+                <div class="border"></div>
+                <span class="title">ABOUT ME</span>
+                <p>
+                    This is your Bio.<br>
+                    You can change this in your user settings
+                </p>
+                <span class="title">DISCORD MEMBER SINCE</span>
+                <div class="flex">
+                    <span>14. Sept. 2018</span>
+                </div>
+                <span class="title">PLAYING A GAME</span>
+                
+                <div class="gamebox">
+                    <div class="icon">
+                        <img src="./assets/noicon.svg" class="icon" id="largeImage">
+                        <img src="./assets/noicon.svg" class="smallicon" id="smallImage">
+                    </div>
+
+                    <div class="text">
+                        <span class="title">Your app name</span>
+                        <span id="prev_line1">Zeile 1</span>
+                        <span id="prev_line2">Zeile 2</span>
+                        <span id="prev_time">21:21:21 elapsed</span>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button href="https://strassburger.org">My Website</button>
+                    <button href="https://strassburger.org">My Website</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="./js/main.js"></script>
+
+</html>
