@@ -8,13 +8,13 @@ const { login, getUser } = require("./utils/rpcManager");
 
 const devMode = process.env.NODE_ENV === 'development';
 
-const appName = "DC Rich Presence Manager"
+const appName = "Discord RP Manager"
 const appRoot = path.join(`${app.getPath("appData") ?? "."}${path.sep}.dcRP`);
 if (!fs.existsSync(appRoot)) fs.mkdirSync(appRoot, { recursive: true });
 
-const appIcon = process.platform === "win32" ? path.join(__dirname + "/public/img/logo.ico") :
-    process.platform === "darwin" ? path.join(__dirname + "/public/img/logo_macos.png") :
-        path.join(__dirname + "/public/img/logo256x256.png");
+const appIcon = process.platform === "win32" ? path.join(__dirname + "/public/assets/logo.ico") :
+    process.platform === "darwin" ? path.join(__dirname + "/public/assets/logo.png") :
+        path.join(__dirname + "/public/assets/logo.png");
 
 logger.transports.file.resolvePathFn = () => path.join(appRoot, "logs.log");
 logger.transports.file.level = "info";
@@ -55,7 +55,7 @@ if (!gotTheLock) {
         }
 
         if (process.platform === "darwin") {
-            app.dock.setIcon(nativeImage.createFromPath(path.join(__dirname + "/public/img/logo_macos.png")));
+            app.dock.setIcon(nativeImage.createFromPath(path.join(__dirname + "/public/assets/logo.png")));
         }
 
         initTray();

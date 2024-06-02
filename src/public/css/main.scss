@@ -121,6 +121,12 @@ body {
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
+
+                button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
             }
         }
     }
