@@ -1,6 +1,6 @@
 {
-    "name": "rp-manager-discord",
-    "version": "1.0.0",
+    "name": "discord-rp-manager",
+    "version": "0.0.1",
     "main": "./src/app.js",
     "scripts": {
         "start": "electron .",
@@ -12,6 +12,42 @@
         "dist:linux:deb": "electron-builder --linux deb",
         "dist:linux:snap": "electron-builder --linux snap",
         "dist:mac": "electron-builder --mac"
+    },
+    "build": {
+        "appId": "org.strassburger.blueknight",
+        "productName": "Discord RP Manager",
+        "copyright": "© 2024 Jan Straßburger",
+        "mac": {
+            "target": "dmg",
+            "icon": "src/public/assets/logo.icns"
+        },
+        "linux": {
+            "target": [
+                "deb",
+                "snap"
+            ],
+            "category": "Utility",
+            "icon": "src/public/assets/logo.icns",
+            "artifactName": "discordrp-${ext}-${version}.${ext}",
+            "maintainer": "Jan Straßburger",
+            "vendor": "Jan Straßburger",
+            "synopsis": "Create a custom rich presence for Discord!"
+        },
+        "win": {
+            "target": [
+                "nsis"
+            ],
+            "icon": "src/public/assets/logo.ico",
+            "artifactName": "blueknight-launcher-win-${version}.${ext}"
+        },
+        "nsis": {
+            "installerIcon": "src/public/assets/logo.ico",
+            "uninstallerIcon": "src/public/assets/logo.ico",
+            "uninstallDisplayName": "Discord RP Manager",
+            "license": "LICENSE",
+            "oneClick": false,
+            "allowToChangeInstallationDirectory": true
+        }
     },
     "keywords": [],
     "author": {
