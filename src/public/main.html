@@ -79,13 +79,13 @@
                     <h3>First Button</h3>
 
                     <div class="setting">
-                        <label>Button text</label>
-                        <input type="text" placeholder="Text displayed on the button" id="buttonText1">
+                        <label>Button URL</label>
+                        <input type="url" placeholder="The url that the button leads to" id="buttonURL1">
                     </div>
 
                     <div class="setting">
-                        <label>Button URL</label>
-                        <input type="url" placeholder="The url that the button leads to" id="buttonURL1">
+                        <label>Button text</label>
+                        <input type="text" placeholder="Text displayed on the button" id="buttonText1">
                     </div>
                 </div>
 
@@ -93,13 +93,13 @@
                     <h3>Second Button</h3>
 
                     <div class="setting">
-                        <label>Button text</label>
-                        <input type="text" placeholder="Text displayed on the button" id="buttonText2">
+                        <label>Button URL</label>
+                        <input type="url" placeholder="The url that the button leads to" id="buttonURL2">
                     </div>
 
                     <div class="setting">
-                        <label>Button URL</label>
-                        <input type="url" placeholder="The url that the button leads to" id="buttonURL2">
+                        <label>Button text</label>
+                        <input type="text" placeholder="Text displayed on the button" id="buttonText2">
                     </div>
                 </div>
             </div>
@@ -132,8 +132,8 @@
                 
                 <div class="gamebox">
                     <div class="icon">
-                        <img src="./assets/noicon.svg" class="icon" id="largeImage">
-                        <img src="./assets/noicon.svg" class="smallicon" id="smallImage">
+                        <img src="./assets/noicon.svg" class="icon" id="largeImage" onerror="this.src = 'https:\/\/file.strassburger.dev/essentialui-big.png'">
+                        <img src="./assets/noicon.svg" class="smallicon" id="smallImage" onerror="this.src = 'https:\/\/file.strassburger.dev/essentialui-big.png'">
                     </div>
 
                     <div class="text">
@@ -144,7 +144,7 @@
                     </div>
                 </div>
 
-                <div class="buttons">
+                <div class="buttons" id="prev_buttons">
                     <button href="https://strassburger.org">My Website</button>
                     <button href="https://strassburger.org">My Website</button>
                 </div>

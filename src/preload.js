@@ -25,6 +25,7 @@ contextBridge.exposeInMainWorld(
                 "getData",
                 "refreshLogin",
                 "getUser",
+                "openURL",
             ];
             if (validChannels.includes(channel)) {
                 return ipcRenderer.invoke(channel, data);

@@ -70,7 +70,7 @@ async function setActivity(data) {
         largeImageText: undefinedIfEmpty(data.largeImgText),
         smallImageKey: undefinedIfEmpty(data.smallImgUrl),
         smallImageText: undefinedIfEmpty(data.smallImgText),
-        buttons: btns,
+        buttons: btns.length > 0 ? btns : undefined,
     });
 
     Logger.info("Updated Activity!");

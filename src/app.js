@@ -77,7 +77,11 @@ if (!gotTheLock) {
 
         ipcMain.handle("getUser", (event, appid) => {
             return getUser();
-        })
+        });
+
+        ipcMain.handle("openURL", (event, url) => {
+            shell.openExternal(url);
+        });
 
         login(store.get("data.appid"));
 
@@ -86,9 +90,7 @@ if (!gotTheLock) {
 }
 
 app.on('window-all-closed', () => {
-    if (process.platform === "darwin") return;
-
-    app.quit();
+    return;
 });
 
 function newWindow() {
