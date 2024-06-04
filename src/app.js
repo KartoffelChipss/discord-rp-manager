@@ -226,33 +226,33 @@ function initTray() {
                 {
                     type: "separator",
                 },
-                {
-                    label: "Home",
-                    accelerator: 'CmdOrCtrl+Shift+H',
-                    click: (item, window, event) => {
-                        top.mainWindow.show();
-                        top.mainWindow.webContents.send("openSection", "main");
-                    },
-                },
-                {
-                    label: "Settings",
-                    accelerator: 'CmdOrCtrl+Shift+S',
-                    click: (item, window, event) => {
-                        top.mainWindow.show();
-                        top.mainWindow.webContents.send("openSection", "settings");
-                    },
-                },
-                {
-                    label: "Addons",
-                    accelerator: 'CmdOrCtrl+Shift+A',
-                    click: (item, window, event) => {
-                        top.mainWindow.show();
-                        top.mainWindow.webContents.send("openSection", "mods");
-                    },
-                },
-                {
-                    type: "separator",
-                },
+                // {
+                //     label: "Home",
+                //     accelerator: 'CmdOrCtrl+Shift+H',
+                //     click: (item, window, event) => {
+                //         top.mainWindow.show();
+                //         top.mainWindow.webContents.send("openSection", "main");
+                //     },
+                // },
+                // {
+                //     label: "Settings",
+                //     accelerator: 'CmdOrCtrl+Shift+S',
+                //     click: (item, window, event) => {
+                //         top.mainWindow.show();
+                //         top.mainWindow.webContents.send("openSection", "settings");
+                //     },
+                // },
+                // {
+                //     label: "Addons",
+                //     accelerator: 'CmdOrCtrl+Shift+A',
+                //     click: (item, window, event) => {
+                //         top.mainWindow.show();
+                //         top.mainWindow.webContents.send("openSection", "mods");
+                //     },
+                // },
+                // {
+                //     type: "separator",
+                // },
                 { role: 'hide' },
                 { role: 'hideothers' },
                 { role: 'unhide' },
