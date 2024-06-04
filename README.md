@@ -1,6 +1,6 @@
 # Discord RP Manager
 
-Discord Rich Presenc emnager optimized for MacOS, written in js using Electron.
+Discord Rich Presence manager optimized for MacOS, written in js using Electron.
 
 ## Installation
 
