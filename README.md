@@ -30,6 +30,16 @@ If you want to build an installer yourself use one of the following commands:
 - Linux: `npm run dist:linux`
 - Windows: `npm run dist:win`
 
+## Common Errors
+
+### Discord RP Manager is damaged and can’t be opened. You should move it to the trash
+
+This message is shown, because the app gets the `com.apple.Quarantine` tag when downloaded from a source, that Apple doesn't like.
+
+```
+xattr -c /Applications/Discord\ RP\ Manager.app
+```
+
 ## License
 
 [GNU General Public License v3.0](https://github.com/KartoffelChipss/rp-manager-discord/blob/main/LICENSE)
