@@ -1,4 +1,5 @@
-# Discord RP Manager
+<img align="left" height="50px" src="https://file.strassburger.dev/discordrp.png" alt="logo">
+<h1>Discord RP Manager</h1>
 
 Discord Rich Presence manager optimized for MacOS, written in js using Electron.
 
