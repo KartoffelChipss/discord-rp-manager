@@ -1,7 +1,9 @@
-<img align="left" height="50px" src="https://file.strassburger.dev/discordrp.png" alt="logo">
-<h1>Discord RP Manager</h1>
+<p align="center">
+  <img height="80px" width="80px" src="https://file.strassburger.dev/discordrp.png" alt="logo">
+  <h3 align="center">Discord RP Manager</h3>
 
-Discord Rich Presence manager optimized for MacOS, written in js using Electron.
+  <p align="center">Discord Rich Presence Manager for MacOS</p>
+</p>
 
 ## Installation
 
