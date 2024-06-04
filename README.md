@@ -32,4 +32,4 @@ If you want to build an installer yourself use one of the following commands:
 
 ## License
 
-[GNU General Public License v3.0](
+[GNU General Public License v3.0](https://github.com/KartoffelChipss/rp-manager-discord/blob/main/LICENSE)
