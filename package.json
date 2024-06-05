@@ -11,7 +11,7 @@
         "dist:linux": "electron-builder --linux",
         "dist:linux:deb": "electron-builder --linux deb",
         "dist:linux:snap": "electron-builder --linux snap",
-        "dist:mac": "electron-builder --mac"
+        "dist:mac": "electron-builder --mac --x64 --arm64"
     },
     "build": {
         "appId": "org.strassburger.blueknight",
@@ -19,7 +19,8 @@
         "copyright": "© 2024 Jan Straßburger",
         "mac": {
             "target": "dmg",
-            "icon": "src/public/assets/logo.icns"
+            "icon": "src/public/assets/logo.icns",
+            "artifactName": "discordrp-${version}-${arch}.${ext}"
         },
         "linux": {
             "target": [
