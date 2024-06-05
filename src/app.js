@@ -139,25 +139,26 @@ function createMainWindow() {
     });
 }
 
+function getLang() {
+    return undefined;
+}
+
 function initTray() {
     const isMac = process.platform === 'darwin';
 
-    let iconColor = "black";
-    if (nativeTheme.shouldUseDarkColors) iconColor = "white";
+    let iconColor = nativeTheme.shouldUseDarkColors ? "white" : "black";
 
     top.tray = null;
 
-    let preferredIconType = "ico";
-
-    if (process.platform === "darwin" || process.platform === "linux") preferredIconType = "png";
+    let preferredIconType = (process.platform === "darwin" || process.platform === "linux") ? "png" : "ico";
 
     if (!isMac) {
-        top.tray = new Tray(path.join(appRoot + `/public/img/logo.${preferredIconType}`));
+        top.tray = new Tray(path.join(__dirname + `/public/assets/logo.${preferredIconType}`));
 
         let menu = [
             {
                 label: getLang(app.getLocale(), "tray_help_title") ?? "Help",
-                icon: nativeImage.createFromPath(appRoot + `/public/img/icons/${iconColor}/help.${preferredIconType}`).resize({ width: 16 }),
+                // icon: nativeImage.createFromPath(__dirname + `/public/img/icons/${iconColor}/help.${preferredIconType}`).resize({ width: 16 }),
                 click: (item, window, event) => {
                     shell.openExternal("https://strassburger.org/discord");
                 },
@@ -166,24 +167,15 @@ function initTray() {
                 type: "separator",
             },
             {
-                label: getLang(app.getLocale(), "tray_home_title") ?? "Home",
-                icon: nativeImage.createFromPath(appRoot + `/public/img/icons/${iconColor}/home.${preferredIconType}`).resize({ width: 16 }),
+                label: getLang(app.getLocale(), "tray_open") ?? "Open",
+                // icon: nativeImage.createFromPath(__dirname + `/public/img/icons/${iconColor}/home.${preferredIconType}`).resize({ width: 16 }),
                 click: (item, window, event) => {
-                    top.mainWindow.show();
-                    top.mainWindow.webContents.send("openSection", "main");
-                },
-            },
-            {
-                label: getLang(app.getLocale(), "tray_settings_title") ?? "Settings",
-                icon: nativeImage.createFromPath(appRoot + `/public/img/icons/${iconColor}/settings.${preferredIconType}`).resize({ width: 16 }),
-                click: (item, window, event) => {
-                    top.mainWindow.show();
-                    top.mainWindow.webContents.send("openSection", "settings");
+                    if (!top.mainWindow) return newWindow();
                 },
             },
             {
                 label: getLang(app.getLocale(), "tray_settings_about") ?? "About",
-                icon: nativeImage.createFromPath(appRoot + `/public/img/icons/${iconColor}/about.${preferredIconType}`).resize({ width: 16 }),
+                // icon: nativeImage.createFromPath(__dirname + `/public/img/icons/${iconColor}/about.${preferredIconType}`).resize({ width: 16 }),
                 click: (item, window, event) => {
                     // aboutWindowManager.show();
                 },
@@ -193,7 +185,7 @@ function initTray() {
             },
             {
                 label: getLang(app.getLocale(), "tray_quit_title") ?? "Quit",
-                icon: nativeImage.createFromPath(appRoot + `/public/img/icons/${iconColor}/off.${preferredIconType}`).resize({ width: 16 }),
+                // icon: nativeImage.createFromPath(appRoot + `/public/img/icons/${iconColor}/off.${preferredIconType}`).resize({ width: 16 }),
                 role: "quit",
             },
         ];
@@ -202,14 +194,6 @@ function initTray() {
         top.tray.setContextMenu(builtmenu);
 
         top.tray.setToolTip(appName);
-
-        top.tray.on("click", function (e) {
-            if (top.mainWindow.isVisible()) {
-                top.mainWindow.hide();
-            } else {
-                top.mainWindow.show();
-            }
-        });
     }
 
     const appMenuTemplate = [
@@ -275,7 +259,7 @@ function initTray() {
                         if (!top.mainWindow) newWindow();
                     }
                 },
-                isMac? { role: 'close' } : { role: 'quit' }
+                { role: 'close' }
             ]
         },
         {
